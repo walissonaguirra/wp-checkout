@@ -98,7 +98,7 @@ add_filter('woocommerce_webhook_payload', function($payload, $resource) {
 
 		    // Informações sobre a compra
 		    'woocommerce_order' => [
-		    	'id'             => $payload['line_items'][0]['product_id'],
+		    	'id'             => $payload['id'],
 		    	'title'          => $payload['line_items'][0]['name'],
 		    	'price'          => $payload['line_items'][0]['price'],
 		    	'payment_status' => $payload['status']
