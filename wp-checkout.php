@@ -36,3 +36,9 @@ add_filter( 'wc_add_to_cart_message_html', '__return_false' );
 add_filter( 'woocommerce_add_to_cart_redirect', function (){
     return wc_get_checkout_url();
 });
+
+/**
+ * Desativar woocommerce_webhook_deliver_async no WooCommerce
+ * para que os webhooks sejão enviados imediatamente
+ */
+apply_filters('woocommerce_webhook_deliver_async', '__return_false' );
