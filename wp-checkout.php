@@ -24,16 +24,3 @@ add_filter( 'woocommerce_add_to_cart_validation', function ($passed) {
 	WC()->cart->empty_cart();
     return $passed;
 });
-
-/**
- * Desabilita alerta: Produto adicionado ao carrinho
- */
-add_filter( 'wc_add_to_cart_message_html', '__return_false' );
-
-/**
- * Redireciona direto para página de checkout
- */
-add_filter( 'woocommerce_add_to_cart_redirect', function (){
-    return wc_get_checkout_url();
-});
-
