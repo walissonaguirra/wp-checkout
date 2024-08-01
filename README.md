@@ -12,37 +12,34 @@ Este plugin faz modificações no fluxo de checkout do woocommerce e modifica a 
 Payloand envia pelo webhook
 ```json
 {
-  "persontype": "F",
-  "birthdate": "04/01/2000",
-  "cpf": "21520388004",
-  "cnpj": "02992059000139",
+  "id": 47,
   "name": "Walisson Aguirra",
-  "company": "",
   "email": "walissonaguirra@icloud.com",
-  "phone": "(11) 99999-9999",
   "password": "Mudar123",
-  "address": {
-    "zipcode": "00000-000",
-    "street": "São João de Calor",
-    "number": "1234",
-    "complement": "",
-    "state": "SP",
-    "city": "São Paulo"
-  },
-  "woocommerce_order": {
-    "id": 17,
-    "title": "MEI Florianópolis",
-    "price": 397,
-    "payment_status": "processing"
-  }
+  "phone": "(11) 99999-9999",
+  "document": "88899977766",
+  "birthdate": "04/01/2000",
+  "address": "Avenida Castelo Branco",
+  "number": "0000",
+  "complement": "",
+  "district": "Santa Lucia",
+  "city": "Campinas",
+  "state": "SP",
+  "zipcode": "88888-888",
+  "cnpj": "02992059000139",
+  "company_name": "Joao Macaxeira",
+  "company_zipcode": "88888-888",
+  "company_address": "Avenida Castelo Branco",
+  "company_city": "Campinas",
+  "company_state": "SP",
+  "company_number": "0000",
+  "company_complement": "",
+  "plan": "Empresa",
+  "billingType": "BOLETO",
+  "value": 397,
+  "paymentId": "pay_06e9va0mm9o6i9il"
 }
 ```
-
-**Detalhes**
-|Chave JSON|Valor|Descrição|
-|---|---|---|
-|persontype|`F` ou `J`| `F` (Pessoa Física) ou `J` (Pessoa Juridica)|
-|payment_status|`pending` ou `processing`| `pending` É o valor default quando o pedido é criado. `processing` Significa que o Getwey de pagamento confirmou o pagamento|
 
 ### Resposta WebHook: Order.Updated
 Após o postagem dos dados do pedido feita pelo webhook woocommerce, ele espera receber os seguinte dados como respota:
