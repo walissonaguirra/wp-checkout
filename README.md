@@ -8,7 +8,7 @@ Este plugin faz modificações no fluxo de checkout do woocommerce e modifica a 
 - Desativar woocommerce_webhook_deliver_async no WooCommerce para que os webhooks sejão enviados imediatamente
 - Filtra dados enviados pelo WebHook Woocommerce
 
-### WebHook: Order.Updated
+### WebHook: Order.Created
 Payloand envia pelo webhook
 ```json
 {
