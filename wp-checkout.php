@@ -74,35 +74,46 @@ add_filter('woocommerce_webhook_payload', function($payload, $resource) {
     }
 
 	if ($resource == 'order') {
+
+		$asaas = json_decode(get_meta_data($payload['meta_data'], '__ASAAS_ORDER'));
+
 	    return [
-	    	// Informações pessoais
-		    'persontype' => $payload['billing']['persontype'],
-		    'birthdate'  => get_meta_data($payload['meta_data'], '_billing_birthdate'),
-		    'cpf'        => $payload['billing']['cpf'],
-		    'cnpj'       => $payload['billing']['cnpj'],
-		    'name'       => $payload['billing']['first_name'] . ' ' . $payload['billing']['last_name'],
-		    'company'    => $payload['billing']['company'],
-		    'email'      => $payload['billing']['email'],
-		    'phone'      => $payload['billing']['phone'],
-		    'password'   => get_meta_data($payload['meta_data'], '_billing_user_password'),
+	    	// WP Post ID
+	    	'id' => $payload['id'],
+
+	    	// Informações pessoa fisica
+		    'name'     	=> $payload['billing']['first_name'] . ' ' . $payload['billing']['last_name'],
+		    'email'    	=> $payload['billing']['email'],
+		    'password' 	=> get_meta_data($payload['meta_data'], '_billing_user_password'),
+		    'phone'    	=> $payload['billing']['phone'],
+		    'document'  => $payload['billing']['cpf'],
+		    'birthdate' => get_meta_data($payload['meta_data'], '_billing_birthdate'),
 
 		    // Infomações de endereço
-		    'address'    => [
-			    'zipcode'    => $payload['billing']['postcode'],
-		    	'street'     => $payload['billing']['address_1'],
-			    'number'     => $payload['billing']['number'],
-			    'complement' => $payload['billing']['address_2'],
-			    'state'      => $payload['billing']['state'],
-			    'city'       => $payload['billing']['city']
-		    ],
+	    	'address'    => $payload['billing']['address_1'],
+			'number'     => $payload['billing']['number'],
+		    'complement' => $payload['billing']['address_2'],
+		    'district'   => $payload['billing']['neighborhood'],
+		    'city'       => $payload['billing']['city'],
+		    'state'      => $payload['billing']['state'],
+			'zipcode'    => $payload['billing']['postcode'],
 
-		    // Informações sobre a compra
-		    'woocommerce_order' => [
-		    	'id'             => $payload['id'],
-		    	'title'          => $payload['line_items'][0]['name'],
-		    	'price'          => $payload['line_items'][0]['price'],
-		    	'payment_status' => $payload['status']
-		    ]
+		    // Informações pessoa juridica
+		    'cnpj'               => $payload['billing']['cnpj'],
+		    "company_name"       => $payload['billing']['company'],
+		    "company_zipcode"    => $payload['billing']['postcode'],
+		    "company_address"    => $payload['billing']['address_1'],
+		    "company_city"       => $payload['billing']['city'],
+		    "company_state"      => $payload['billing']['state'],
+		    "company_number"     => $payload['billing']['number'],
+		    "company_complement" => $payload['billing']['address_2'],
+
+		    // Informações de pagamento
+		    "email"       => $payload['billing']['email'],
+		    "plan"        => "Empresa",
+		    "billingType" => $asaas->billingType,
+		    "value"       => $asaas->value,
+		    "paymentId"   => $asaas->id
 		];
     }
 
