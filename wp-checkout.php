@@ -4,7 +4,7 @@
  * Plugin Name:       WP Checkout
  * Plugin URI:        
  * Description:       Custumização para o fluxo do woocommerce checkout
- * Version:           0.0.1
+ * Version:           0.3.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Walisson Aguirra
@@ -17,123 +17,16 @@
  * Requires Plugins:  woocommerce
  */
 
-/**
- * Limpar o carrinho antes de adicionar um novo item
- */
-add_filter( 'woocommerce_add_to_cart_validation', function ($passed) {
-	WC()->cart->empty_cart();
-    return $passed;
-});
+if (!defined('ABSPATH')) {
+	exit;
+}
 
-/**
- * Desabilita alerta: Produto adicionado ao carrinho
- */
-add_filter( 'wc_add_to_cart_message_html', '__return_false' );
+require_once 'class-setup.php';
+require_once 'class-code-snippet.php';
+require_once 'class-checkout-process.php';
+require_once 'class-order-process.php';
 
-/**
- * Redireciona direto para página de checkout
- */
-add_filter( 'woocommerce_add_to_cart_redirect', function (){
-    return wc_get_checkout_url();
-});
-
-/**
- * Desativar woocommerce_webhook_deliver_async no WooCommerce
- * para que os webhooks sejão enviados imediatamente
- */
-add_filter('woocommerce_webhook_deliver_async', '__return_false' );
-
-/**
- * Filtra dados enviados pelo WebHook Woocommerce
- * 
- * @filter woocommerce_webhook_payload
- * @priority 10
- * @arguments 4
- * 
- * @param array $payload
- * @param \WC_Order|\WC_Product|WP_User $resource
- * @param int $resource_id
- * @param string $webhook_id
- * @return array New payload
- */
-add_filter('woocommerce_webhook_payload', function($payload, $resource) {
-
-	/**
-	 * Pega o valor de meta campo no pedido
-	 *
-	 * @param  array   $meta_data  Meta campos
-	 * @param  string  $key        Key do meta campo
-	 */
-    function get_meta_data(array $meta_data, string $key) 
-    {
-    	$data = array_filter($meta_data, function ($item) use ($key) {
-    		return $item['key'] == $key;
-    	});
-
-    	return $data[array_key_first($data)]['value'] ?? null;
-    }
-
-	if ($resource == 'order') {
-	    return [
-	    	// Informações pessoais
-		    'persontype' => $payload['billing']['persontype'],
-		    'birthdate'  => get_meta_data($payload['meta_data'], '_billing_birthdate'),
-		    'cpf'        => $payload['billing']['cpf'],
-		    'cnpj'       => $payload['billing']['cnpj'],
-		    'name'       => $payload['billing']['first_name'] . ' ' . $payload['billing']['last_name'],
-		    'company'    => $payload['billing']['company'],
-		    'email'      => $payload['billing']['email'],
-		    'phone'      => $payload['billing']['phone'],
-		    'password'   => get_meta_data($payload['meta_data'], '_billing_user_password'),
-
-		    // Infomações de endereço
-		    'address'    => [
-			    'zipcode'    => $payload['billing']['postcode'],
-		    	'street'     => $payload['billing']['address_1'],
-			    'number'     => $payload['billing']['number'],
-			    'complement' => $payload['billing']['address_2'],
-			    'state'      => $payload['billing']['state'],
-			    'city'       => $payload['billing']['city']
-		    ],
-
-		    // Informações sobre a compra
-		    'woocommerce_order' => [
-		    	'id'             => $payload['id'],
-		    	'title'          => $payload['line_items'][0]['name'],
-		    	'price'          => $payload['line_items'][0]['price'],
-		    	'payment_status' => $payload['status']
-		    ]
-		];
-    }
-
-    return $payload;
-
-}, 10, 4);
-
-/**
- * Salva á resposta do WebHook em meta campo do pedido
- */
-add_action('woocommerce_webhook_delivery', function($http_args, $response, $duration, $arg, $webhook_id) {
-
-	if ($response['response']['code'] == 200 && isset($response['body']['magic-link'])) {
-
-		update_post_meta(
-			$response['body']['id'],
-			'magic-link',
-			$response['body']['magic-link']
-		);
-
-	}
-
-}, 1, 5);
-
-/**
- * Adicionar botão com magic-link para login na plataform
- */
-add_action('woocommerce_order_details_after_order_table', function ($order) {
-
-	echo <<<HTML
-	<a class="button alt" target="_black" href="{$order->get_meta('magic-link')}">Acessa á plataforma</a>
-	HTML;
-
-}, 10);
+new WPC_Setup();
+new WPC_Code_Snippet();
+new WPC_Checkout_Process();
+new WPC_Order_Process();

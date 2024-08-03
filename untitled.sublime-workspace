@@ -1,0 +1,544 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"WPC_",
+				"WPC_Checkout_Process"
+			],
+			[
+				"fun",
+				"fun\tfunction …"
+			],
+			[
+				"clas",
+				"class-code-snippet.php"
+			],
+			[
+				"http",
+				"$http_args"
+			],
+			[
+				"User",
+				"User [App\\Models]"
+			],
+			[
+				"p",
+				"payload"
+			],
+			[
+				"me",
+				"meta_data_item"
+			],
+			[
+				"re",
+				"resource"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "class-order-process.php",
+			"settings":
+			{
+				"buffer_size": 5026,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+			]
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"form",
+				"LSP: Format File"
+			],
+			[
+				"fo",
+				"LSP: Format File"
+			],
+			[
+				"frm",
+				"LSP: Format File"
+			],
+			[
+				"translate",
+				"Translate clipboard"
+			],
+			[
+				"tras",
+				"Translate selected text"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"LSP: Format File"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"lsplog",
+				"LSP: Toggle Log Panel"
+			],
+			[
+				"fmt on",
+				"phpfmt: toggle format on save"
+			],
+			[
+				"lsp",
+				"Preferences: LSP Settings"
+			],
+			[
+				"intele",
+				"Preferences: LSP-intelephense Settings"
+			],
+			[
+				"aut",
+				"phpfmt: toggle autocomplete"
+			],
+			[
+				"auto",
+				"phpfmt: toggle autocomplete"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"formt",
+				"phpfmt: format now"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"sync",
+				"Sync Settings: Download"
+			],
+			[
+				"sync up",
+				"Sync Settings: Upload"
+			],
+			[
+				"rmove",
+				"Package Control: Remove Package"
+			],
+			[
+				"phpfmt",
+				"phpfmt: format now"
+			],
+			[
+				"html",
+				"HTMLBeautify"
+			],
+			[
+				"relo",
+				"Project: Refresh Folders"
+			],
+			[
+				"impor",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"impo",
+				"PHPCompanion:Import Namespace"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"olor ",
+				"UI: Select Color Scheme"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 154.0,
+		"history":
+		[
+			"pt"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout"
+	],
+	"file_history":
+	[
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/wp-checkout.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/class-order-process.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/class-code-snippet.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/class-setup.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/class-checkout-process.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/untitled.sublime-project",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/untitled.sublime-workspace",
+		"/home/aguirra/Job/seguro.epostal.com.br/.htaccess",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-config.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/autocomplete-address-for-woocommerce.1.3.2 (2)",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/woocommerce/includes/class-wc-webhook.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-includes/class-wp-hook.php",
+		"/home/aguirra/Projects/meusEventos/routes/web.php",
+		"/home/aguirra/Projects/meusEventos/config/app.php",
+		"/home/aguirra/Downloads/ePostal/api.txt",
+		"/home/aguirra/Downloads/ePostal/01-08-2024-debug.log",
+		"/home/aguirra/Projects/meusEventos/app/Http/Controllers/HelloWorldController.php",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/README.md",
+		"/home/aguirra/.sync_settings/sync.log",
+		"/home/aguirra/.config/sublime-text/Packages/User/SyncSettings.sublime-settings",
+		"/home/aguirra/Projects/meusEventos/resources/views/test.blade.php",
+		"/home/aguirra/.config/sublime-text/Packages/User/CodeFormatter.sublime-settings",
+		"/home/aguirra/Projects/meusEventos/resources/views/welcome.blade.php",
+		"/home/aguirra/.config/sublime-text/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/home/aguirra/.config/sublime-text/Packages/phpfmt/phpfmt.sublime-settings",
+		"/home/aguirra/.config/sublime-text/Packages/User/Base File.sublime-settings",
+		"/home/aguirra/Job/seguro.epostal.com.br/wp-content/debug.log",
+		"/home/aguirra/Downloads/ePostal/ePostal.svg",
+		"/home/aguirra/Job/epostal/app/Http/Controllers/CheckoutPlanController.php",
+		"/home/aguirra/Job/epostal/app/Services/AsaasService.php",
+		"/home/aguirra/Projects/30-day-to-learn-laravel-11/.env",
+		"/home/aguirra/Projects/30-day-to-learn-laravel-11/routes/web.php",
+		"/home/aguirra/Projects/30-day-to-learn-laravel-11/app/Http/Controllers/Controller.php",
+		"/home/aguirra/Projects/30-day-to-learn-laravel-11/config/app.php",
+		"/etc/php/php.ini"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\t\t\t"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "class-order-process.php",
+					"selected": true,
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 5026,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5026,
+								5026
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": "$>:\\/'\"*.<",
+									"selector": "punctuation.accessor | punctuation.definition.variable | punctuation.separator.namespace | punctuation.definition.tag.begin",
+									"server": "LSP-intelephense"
+								}
+							],
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///home/aguirra/Job/seguro.epostal.com.br/wp-content/plugins/wp-checkout/class-order-process.php",
+							"show_definitions": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3421.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 150.0
+	},
+	"output.diagnostics":
+	{
+		"height": 150.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups-dummy":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"web",
+				"routes/web.php"
+			],
+			[
+				"Helloer",
+				"app/Http/Controllers/HelloWorldController.php"
+			],
+			[
+				"woocommerce/includes/class-wc-webhook.php",
+				"wp-content/plugins/woocommerce/includes/class-wc-webhook.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 357.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
