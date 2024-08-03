@@ -98,7 +98,7 @@ add_filter('woocommerce_webhook_payload', function($payload, $resource) {
 
 		    // Informações sobre a compra
 		    'woocommerce_order' => [
-		    	'id'             => $payload['line_items'][0]['product_id'],
+		    	'id'             => $payload['id'],
 		    	'title'          => $payload['line_items'][0]['name'],
 		    	'price'          => $payload['line_items'][0]['price'],
 		    	'payment_status' => $payload['status']
@@ -109,3 +109,31 @@ add_filter('woocommerce_webhook_payload', function($payload, $resource) {
     return $payload;
 
 }, 10, 4);
+
+/**
+ * Salva á resposta do WebHook em meta campo do pedido
+ */
+add_action('woocommerce_webhook_delivery', function($http_args, $response, $duration, $arg, $webhook_id) {
+
+	if ($response['response']['code'] == 200 && isset($response['body']['magic-link'])) {
+
+		update_post_meta(
+			$response['body']['id'],
+			'magic-link',
+			$response['body']['magic-link']
+		);
+
+	}
+
+}, 1, 5);
+
+/**
+ * Adicionar botão com magic-link para login na plataform
+ */
+add_action('woocommerce_order_details_after_order_table', function ($order) {
+
+	echo <<<HTML
+	<a class="button alt" target="_black" href="{$order->get_meta('magic-link')}">Acessa á plataforma</a>
+	HTML;
+
+}, 10);

@@ -44,5 +44,11 @@ Payloand envia pelo webhook
 |persontype|`F` ou `J`| `F` (Pessoa Física) ou `J` (Pessoa Juridica)|
 |payment_status|`pending` ou `processing`| `pending` É o valor default quando o pedido é criado. `processing` Significa que o Getwey de pagamento confirmou o pagamento|
 
-
-
+### Resposta WebHook: Order.Updated
+Após o postagem dos dados do pedido feita pelo webhook woocommerce, ele espera receber os seguinte dados como respota:
+```json
+{
+  "id": 47,
+  "magic-link": "https://login.epostal.com.br/[hash_unica_para_login]"
+}
+```
