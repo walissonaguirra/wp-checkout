@@ -1,6 +1,11 @@
 ## WP Chekout
 Este plugin faz modificações no fluxo de checkout do woocommerce e se integra com a API epostal
 
+| Fluxograma de processamento |
+|---|
+![doc_wp_checkout_eposta](https://github.com/user-attachments/assets/49032e84-8c95-4a8b-8c93-e2bd23a3cbe3)
+
+
 ### Ações do plugin
 - Limpar o carrinho antes de adicionar um novo item
 - Desabilita alerta: Produto adicionado ao carrinho
@@ -73,12 +78,20 @@ Payload para atualiza o status de pagamento for confirmado
 ```json
 {
   "email": "harrypotter@epostal.com",
-  "password": "Trasgu_00", // Nessecario para obter o Bearer Token
+  "password": "Trasgu_00",
   "plan": "Empresa",
-  "billingType": "BOLETO", // ASAAS
+  "billingType": "BOLETO",
   "status": "processing", 
-  "value": "397.00", // String
-  "paymentId": 47 // ASAAS ID
+  "value": "397.00",
+  "paymentId": 47
 }
 ```
+> "password": "Trasgu_00"  // Necessario para obter o Bearer Token<br/>
+> "billingType": "BOLETO"  // ASAAS<br/>
+> "value": "397.00"        // Precisa esta no formato String<br/>
+> "paymentId": 47          // ASAAS ID
+
 Quando o GetWay de pagamento responde com a confirmação o WooCommerce atualiza o status do pedido para `processing`, (Significa pagamento recebido)
+
+### Licença
+Este projeto está licenciado sob a proprietaria da [ePostal](https://epostal.com.br)
