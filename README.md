@@ -93,5 +93,12 @@ Payload para atualiza o status de pagamento for confirmado
 
 Quando o GetWay de pagamento responde com a confirmação o WooCommerce atualiza o status do pedido para `processing`, (Significa pagamento recebido)
 
+### Shortcode: [wpc_order_received]
+Carrega informações do produto de forma dinamica na página de 'resumo do pedido'
+|PrintScreen da tela|
+|---|
+![Screenshot_2024-08-07_11-17-41](https://github.com/user-attachments/assets/620d713f-2615-449b-8ef2-8f130ca6d2aa)
+
+
 ### Licença
 Este projeto está licenciado sob a proprietaria da [ePostal](https://epostal.com.br)
