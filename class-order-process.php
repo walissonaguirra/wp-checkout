@@ -98,12 +98,20 @@ class WPC_Order_Process
 			return $payload;
 		}
 
+		$order = wc_get_order($payload['id']);
+
+		foreach ($order->get_items() as $item) {
+			$product_id = $item->get_product_id();
+			$plan = get_post_meta($product_id, 'plan', true);
+			break;
+		}
+
 		$asaas = json_decode($this->get_meta_data($payload['meta_data'], '__ASAAS_ORDER'));
 
 		return [
 			'email'       => $payload['billing']['email'],
 			'password'	  => $this->get_meta_data($payload['meta_data'], '_billing_user_password'),
-			'plan'        => 'Empresa',
+			'plan'        => $plan,
 			'billingType' => $asaas->billingType,
 			'status'      => $payload['status'],
 			'value'       => "$asaas->value",

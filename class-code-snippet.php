@@ -68,6 +68,7 @@ class WPC_Code_Snippet
 			$product = wc_get_product($product_id);
 			$description = $product->get_description();
 			$title = $item->get_name();
+			break;
 		}
 
 		$assas = json_decode($order->get_meta('__ASAAS_ORDER'));
