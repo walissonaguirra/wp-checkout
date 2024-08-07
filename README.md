@@ -16,8 +16,10 @@ Este plugin faz modificações no fluxo de checkout do woocommerce e se integra 
 - Desabilita webHook async (comentado por padrão)
 - Adicionar código JavaScript na página de Checkout WooCommerce
 - Adicionar botão com magic-link para login automatico na epostal dash
+- Cria shortcode com conteúdo dinamico na página de resumo do produto
 - Integração: Cadastra usuário na eposta
 - Integração: Confirma status de pagamento na eposta
+- Cria página de configurações para o plugin
 
 ### WebHook: woocommerce_checkout_process
 Payloand enviada pelo webhook para cadastro de usuário
@@ -79,7 +81,7 @@ Payload para atualiza o status de pagamento for confirmado
 {
   "email": "harrypotter@epostal.com",
   "password": "Trasgu_00",
-  "plan": "Empresa",
+  "plan": "2",
   "billingType": "BOLETO",
   "status": "processing", 
   "value": "397.00",
@@ -90,14 +92,21 @@ Payload para atualiza o status de pagamento for confirmado
 > "billingType": "BOLETO"  // ASAAS<br/>
 > "value": "397.00"        // Precisa esta no formato String<br/>
 > "paymentId": 47          // ASAAS ID
+> "plan": "2"              // ID do plan do produto,
 
-Quando o GetWay de pagamento responde com a confirmação o WooCommerce atualiza o status do pedido para `processing`, (Significa pagamento recebido)
+Quando o GetWay de pagamento responde com a confirmação o WooCommerce atualiza o status do pedido para `processing`, (Significa pagamento recebido). O campo `plan` é definido em um meta campo com o nome 'plan' na criação do produto 
 
 ### Shortcode: [wpc_order_received]
 Carrega informações do produto de forma dinamica na página de 'resumo do pedido'
 |PrintScreen da tela|
 |---|
 ![Screenshot_2024-08-07_11-17-41](https://github.com/user-attachments/assets/620d713f-2615-449b-8ef2-8f130ca6d2aa)
+
+### Page Settings
+Página de configuração para definir os endpoints da APi
+|PrintScreen da página de conigurações|
+|---|
+![Screenshot_2024-08-07_14-24-21](https://github.com/user-attachments/assets/ec251254-0528-4b81-b406-71ceeb7e7739)
 
 
 ### Licença
