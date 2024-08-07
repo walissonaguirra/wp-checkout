@@ -4,7 +4,7 @@
  * Plugin Name:       WP Checkout
  * Plugin URI:        
  * Description:       Custumização para o fluxo do woocommerce checkout
- * Version:           0.3.0
+ * Version:           0.4.0
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Walisson Aguirra
