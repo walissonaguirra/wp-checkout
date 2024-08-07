@@ -2,7 +2,7 @@
 
 class WPC_Order_Process
 {
-	private string $webhook_url = 'https://hmg.epostal.com.br/api/tokens/create';
+	private string $webhook_url;
 
 	public function __construct()
 	{
@@ -17,6 +17,11 @@ class WPC_Order_Process
 
 		// Filtra dados enviados pelo WebHook Woocommerce para confirmar pagamento
 		add_filter('woocommerce_webhook_payload', [$this, 'webhook_payload_format'], 10, 2);
+	}
+
+	private function getWebhookURL()
+	{
+		$this->webhook_url = get_option('wpc_endpoint_get_token');
 	}
 
 	public function save_magic_link($order_id, $order)
@@ -51,6 +56,8 @@ class WPC_Order_Process
 		if (!isset($payload->status) || $payload->status != 'processing') {
 			return $http_args;
 		}
+
+		$this->getWebhookURL();
 
 		$response = wp_remote_post($this->webhook_url, [
 			'method'    => 'POST',

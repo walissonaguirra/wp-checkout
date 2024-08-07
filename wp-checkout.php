@@ -22,11 +22,13 @@ if (!defined('ABSPATH')) {
 }
 
 require_once 'class-setup.php';
+require_once 'class-page-settings.php';
 require_once 'class-code-snippet.php';
 require_once 'class-checkout-process.php';
 require_once 'class-order-process.php';
 
 new WPC_Setup();
+new WPC_Page_Settings();
 new WPC_Code_Snippet();
 new WPC_Checkout_Process();
 new WPC_Order_Process();

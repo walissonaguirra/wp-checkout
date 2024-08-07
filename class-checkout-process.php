@@ -2,12 +2,17 @@
 
 class WPC_Checkout_Process
 {
-	private string $webhook_url = 'https://hmg.epostal.com.br/api/profile/register';
+	private string $webhook_url;
 
 	public function __construct()
 	{
 		//Cadastra usuário na API Laravel antes de processa o pedido
 		add_action('woocommerce_checkout_process', [$this, 'api_register_new_user']);	
+	}
+
+	private function getWebhookURL()
+	{
+		$this->webhook_url = get_option('wpc_endpoint_user_create');
 	}
 
 	public function api_register_new_user()
@@ -32,6 +37,8 @@ class WPC_Checkout_Process
 		
 		$date      = date_create_from_format('d/m/Y', $birthdate);
 		$birthdate = $date->format('Y-m-d');
+
+		$this->getWebhookURL();
 				
 		$response    = wp_remote_post($this->webhook_url, [
 	        'method'    => 'POST',
