@@ -9,6 +9,9 @@ class WPC_Page_Settings
 
 		// Criar form para configurações
 		add_action('admin_init', [$this, 'form_settings']);
+
+		// Adicionar um link para a página de configuração na listagem de plugins instalados
+		add_filter("plugin_action_links_wp-checkout/wp-checkout.php", [$this, 'add_link_settings']);
 	}
 
 	public function create_page_settings()
@@ -20,6 +23,13 @@ class WPC_Page_Settings
 			'wp-checkout-settings', 		 // Valor do parâmetro "page" no URL
 			[$this, 'page_settings_content'] // Função que imprime o conteúdo da página
 		);
+	}
+
+	function add_link_settings($links)
+	{
+		$settings_link = '<a href="options-general.php?page=wp-checkout-settings">Configurações</a>';
+		array_unshift($links, $settings_link);
+		return $links;
 	}
 
 	public function page_settings_content()
